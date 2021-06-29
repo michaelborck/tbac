@@ -1,6 +1,4 @@
-﻿
-
-# Roadmap
+﻿# Roadmap
 
 ## Business Analytics ‘Centre’
 
