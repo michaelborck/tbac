@@ -1,0 +1,31 @@
+site_name: BAC
+site_url: https://businessanalyticscentre.website/
+site_description: Democratising Analytics, Increasing Collaborations, Industry Focused
+site_author: BAC Team
+
+
+theme:
+    name: mkdocs
+    logo: img/logo.png
+    locale: en
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - django
+
+nav:
+    - Home: index.md
+    - Showcase:
+        - Overview: show-case/index.md
+        - Brand Analytics: show-case/brand-analytics.md
+        - Customer Churn: show-case/customer-churn.md
+        - Employee Retention: show-case/employee-retention.md
+        - Inventory Management: show-case/inventory-management.md
+        - Sales Forecast: show-case/sales-forecast.md
+    - Roadmap: roadmap.md
+
+extra_css:
+    - css/extra.css
+
+plugins:
+    - search
