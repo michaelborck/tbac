@@ -1,12 +1,12 @@
-site_name: BAC
+site_name: ''
 site_url: https://businessanalyticscentre.website/
 site_description: Democratising Analytics, Increasing Collaborations, Industry Focused
-site_author: BAC Team
+site_author: TBAC Team
 
 
 theme:
     name: mkdocs
-    logo: img/logo.png
+    logo: img/logo-white.png
     locale: en
     highlightjs: true
     hljs_languages:
