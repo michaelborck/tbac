@@ -16,7 +16,11 @@ theme:
 nav:
     - Home: index.md
     - Roadmap: roadmap.md
-    - Team: team.md
+    - Team:
+        - Overview: team.md
+        - Associate Professor Nik Thompson: "https://staffportal.curtin.edu.au/staff/profile/view/nik-thompson-d7141bdd/"
+        - Dr Luke Butcher: "https://staffportal.curtin.edu.au/staff/profile/view/luke-butcher-dc35ec50/"
+        - Dr Michael Borck: "https://staffportal.curtin.edu.au/staff/profile/view/Michael.Borck/"
     - Showcase:
         - Overview: show-case/index.md
         - Brand Analytics: show-case/brand-analytics.md
