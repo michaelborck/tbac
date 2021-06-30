@@ -2,47 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://businessanalyticscentre.website/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/roadmap/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://businessanalyticscentre.website/team/</loc>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/brand-analytics/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/customer-churn/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/employee-retention/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/google-analytics/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/inventory-management/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://businessanalyticscentre.website/show-case/pca-analysis/</loc>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://businessanalyticscentre.website/show-case/sales-forecast/</loc>
-         <lastmod>2021-06-29</lastmod>
+         <lastmod>2021-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://businessanalyticscentre.website/show-case/which-model/</loc>
+         <lastmod>2021-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
