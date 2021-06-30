@@ -22,12 +22,19 @@ nav:
         - Dr Luke Butcher: "https://staffportal.curtin.edu.au/staff/profile/view/luke-butcher-dc35ec50/"
         - Dr Michael Borck: "https://staffportal.curtin.edu.au/staff/profile/view/Michael.Borck/"
     - Showcase:
-        - Overview: show-case/index.md
-        - Brand Analytics: show-case/brand-analytics.md
-        - Customer Churn: show-case/customer-churn.md
-        - Employee Retention: show-case/employee-retention.md
-        - Inventory Management: show-case/inventory-management.md
-        - Sales Forecast: show-case/sales-forecast.md
+        - Overview: showcase/index.md
+        - Simple Sentiment: showcase/simple-sentiment/simple-sentiment.md
+        - Blackboard Discussion: showcase/discussion-board/discussion-board.md
+        - Brand Analytics: showcase/brand-analytics/brand-analytics.md
+        - Customer Churn:
+            - Overview: showcase/customer-churn/00_crisp-dm.md
+            - Business Understanding: showcase/customer-churn/01_business-understanding.md
+            - Data Understanding: showcase/customer-churn/02_data-understanding.md
+            - Data Preparation: showcase/customer-churn/03_data-preparation.md
+            - Modeling: showcase/customer-churn/04_modeling.md
+            - Evaluation: showcase/customer-churn/05_evaluaiton.md
+            - Deployment: showcase/customer-churn/06_deployment.md
+        - Employee Retention: showcase/employee-retention.md
     - Contact:
         - A.Prof Nik Thompson: "mailto:nik.thompson@curtin.edu.au?subject=Discuss%20Business%20Analytics"
         - Dr Luke Butcher: "mailto:luke.butcher@curtin.edu.au?subject=Discuss%20Business%20Analytics"
