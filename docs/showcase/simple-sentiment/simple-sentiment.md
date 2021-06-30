@@ -1,7 +1,19 @@
 # Sentiment Analysis using Textblob (NLP for beginners)
+
 Text Analytics
 
+Text analytics provides a powerful way to derive meaning from textual data.
+It can be used for a number of different things such as sentiment analysis,
+topic detection, and predictive analysis. The most common way that text
+analytics is used is to extract information about the topic and sentiment of
+any given piece of text. This allows companies to examine how their customers
+feel about their company or products. Text analytics has been around for a
+number of years now, however it has exploded in popularity thanks to recent
+advancements in machine learning algorithms and the availability of
+affordable cloud computing.
+
 ## Workflow
+
 1. Load & Clean data
 2. Install TextBlob (Optional)
 3. Perform sentiment analysis

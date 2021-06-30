@@ -29,7 +29,7 @@ nav:
         - Customer Churn:
             - Overview: showcase/customer-churn/00_crisp-dm.md
             - Business Understanding: showcase/customer-churn/01_business-understanding.md
-            - Data Understanding: showcase/customer-churn/02_data-understanding.md
+            - Data Understanding: showcase/customer-churn/02_data-understanding/02_data-understanding.md
             - Data Preparation: showcase/customer-churn/03_data-preparation.md
             - Modeling: showcase/customer-churn/04_modeling.md
             - Evaluation: showcase/customer-churn/05_evaluaiton.md

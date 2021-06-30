@@ -33,17 +33,32 @@ for more information on the data and other notebooks.
 ![png](output_9_1.png)
 </center>
 
-## Bsaed on service
+## Based on service
 
 <center>
 ![png](output_10_1.png)
 </center>
 
+## Based on contract type
+
+<center>
+![png](output_11_1.png)
+</center>
+
+## Based on payment method
+
+<center>
+![png](output_12_1.png)
+</center>
+
+
 From the two charts above, I can clearly see that there is some discrimination in the data. The monthly charges chart (on the left) shows that most of the loyal customers that stayed with the company had a monthly charge between $20 and $30. Most of the customers that churned had a monthly charge of $70 to $100. Maybe the company should lower the monthly charges to retain customers.
 
 The tenure chart (on the right) shows some discrimination as well. From the chart, I can see that most of the customers that churned had between 1 and 9 months with the company, while most of the retained customers had a tenure between 24 and 72 months which is 2 to 6 years. So, it may be in the companies best interest to try everything they can to keep their customers for at least 2 years.
 
-![png](output_11_1.png)
+<center>
+![png](output_13_1.png)
+</center>
 
 ## Verify data quality
 
