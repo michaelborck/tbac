@@ -1,3 +1,0 @@
-# Evaluation
-
-Stage 5
