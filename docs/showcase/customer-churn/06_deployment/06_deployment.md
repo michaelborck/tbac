@@ -28,3 +28,7 @@ models as API to predict in real-time.
 It doesn't actually stop there,  if the model is going to production, be
 sure you maintain the model in production. Constant monitoring and occasional
 model tuning is often required.
+
+<center>
+![png](customer_churn.png)
+</center>

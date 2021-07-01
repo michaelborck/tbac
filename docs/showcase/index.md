@@ -44,7 +44,7 @@ to evaluate the reasons for this turnover, it is necessary to track and monitor
 the churn rate closely. This example demonstrates the lifecycle of the
 Cross-industry Standard Process for Data  Mining (CRISP-DM).
 
-## [Employee Retention](employee-retention.md)
+## [Employee Uplift](employee-retention.md)
 
 Employee retention is a challenge for many companies. This is due to the
 intense market competition and the high demand for talent. A recent study
@@ -56,3 +56,11 @@ more engaged, more productive, and less likely to leave.
 People who make decisions need to know what information is relevant and what
 is not. Plotting your data can help you spot patterns and trends that you
 might not otherwise notice, and help you make better decisions.
+
+## [Automatic PCA Analysis](pca-analysis/pca-analysis.md)
+
+PCA is a technique for transforming a set of variables into a set of
+uncorrelated variables. PCA can be used for exploratory data analysis,
+dimensionality reduction, feature extraction, and many other tasks. PCA is a
+linear transformation so it can be implemented efficiently and it’s the most
+commonly used algorithm for dimensionality reduction.
