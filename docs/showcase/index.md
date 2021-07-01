@@ -3,17 +3,6 @@
 Examples of various types of analytics and how they are used in the world
 of marketing, social media, and other areas.
 
-## [Sentiment Analysis](simple-sentiment/simple-sentiment.md)
-
-Text analytics provides a powerful way to derive meaning from textual data.
-It can be used for a number of different things such as sentiment analysis,
-topic detection, and predictive analysis. The most common way that text
-analytics is used is to extract information about the topic and sentiment of
-any given piece of text. This allows companies to examine how their customers
-feel about their company or products. Text analytics has been around for a
-number of years now, however it has exploded in popularity thanks to recent
-advancements in machine learning algorithms and the availability of
-affordable cloud computing.
 
 ## [Learning Analytics](discussion-board/discussion-board.md)
 
@@ -44,12 +33,6 @@ to evaluate the reasons for this turnover, it is necessary to track and monitor
 the churn rate closely. This example demonstrates the lifecycle of the
 Cross-industry Standard Process for Data  Mining (CRISP-DM).
 
-## [Employee Uplift](employee-retention.md)
-
-Employee retention is a challenge for many companies. This is due to the
-intense market competition and the high demand for talent. A recent study
-shows that employees who feel like they are part of a community at work are
-more engaged, more productive, and less likely to leave.
 
 ## [Visual Decisions Making](visual-decisions/visual-decisions.md)
 

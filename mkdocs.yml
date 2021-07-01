@@ -22,18 +22,16 @@ nav:
         - Dr Michael Borck: "https://staffportal.curtin.edu.au/staff/profile/view/Michael.Borck/"
     - Showcase:
         - Overview: showcase/index.md
-        - Simple Sentiment: showcase/simple-sentiment/simple-sentiment.md
         - Blackboard Discussion: showcase/discussion-board/discussion-board.md
         - Brand Analytics: showcase/brand-analytics/brand-analytics.md
         - Customer Churn:
-            - Overview: showcase/customer-churn/00_crisp-dm/00_crisp-dm.md
+            - CRISP-DM Overview: showcase/customer-churn/00_crisp-dm/00_crisp-dm.md
             - Business Understanding: showcase/customer-churn/01_business-understanding/01_business-understanding.md
             - Data Understanding: showcase/customer-churn/02_data-understanding/02_data-understanding.md
             - Data Preparation: showcase/customer-churn/03_data-preparation/03_data-preparation.md
             - Modeling: showcase/customer-churn/04_modeling/04_modeling.md
             - Evaluation: showcase/customer-churn/05_evaluation/05_evaluation.md
             - Deployment: showcase/customer-churn/06_deployment/06_deployment.md
-        - Employee Uplift: showcase/employee-uplift/employee-uplift.md
         - Visual Decisions: showcase/visual-decisions/visual-decisions.md
         - Automated PCA: showcase/pca-analysis/pca-analysis.md
 
