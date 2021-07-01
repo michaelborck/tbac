@@ -11,8 +11,8 @@ Cross-industry Standard Process for Data Mining (CRISP-DM).
 ## CRISP-DM
 The most widely-used analytics model.
 
-1. [Business understanding](../01_bussiness-understanding/01_bussiness-understanding.md)
-2. [Data understanding](../02_data-understand/02_data-understanding.md)
+1. [Business understanding](../01_business-understanding/01_business-understanding.md)
+2. [Data understanding](../02_data-understanding/02_data-understanding.md)
 3. [Data preparation](../03_data-preparation/03_data-preparation.md)
 4. [Modelling](../04_modeling/04_modeling.md)
 5. [Evaluation](../05_evaluation/05_evaluation.md)
