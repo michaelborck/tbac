@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="TBAC Team">
+        <link rel="canonical" href="https://businessanalyticscentre.website/showcase/customer-churn/04_modeling/04_modeling/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Modeling - </title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../../../css/extra.css" rel="stylesheet">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../.."></a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../roadmap/" class="nav-link">Roadmap</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Team <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../team/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/nik-thompson-d7141bdd/" class="dropdown-item">Associate Professor Nik Thompson</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/luke-butcher-dc35ec50/" class="dropdown-item">Dr Luke Butcher</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/Michael.Borck/" class="dropdown-item">Dr Michael Borck</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../../discussion-board/discussion-board/" class="dropdown-item">Blackboard Discussion</a>
+</li>
+                                    
+<li>
+    <a href="../../../brand-analytics/brand-analytics/" class="dropdown-item">Brand Analytics</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Customer Churn</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../00_crisp-dm/00_crisp-dm/" class="dropdown-item">CRISP-DM Overview</a>
+</li>
+            
+<li>
+    <a href="../../01_business-understanding/01_business-understanding/" class="dropdown-item">Business Understanding</a>
+</li>
+            
+<li>
+    <a href="../../02_data-understanding/02_data-understanding/" class="dropdown-item">Data Understanding</a>
+</li>
+            
+<li>
+    <a href="../../03_data-preparation/03_data-preparation/" class="dropdown-item">Data Preparation</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Modeling</a>
+</li>
+            
+<li>
+    <a href="../../05_evaluation/05_evaluation/" class="dropdown-item">Evaluation</a>
+</li>
+            
+<li>
+    <a href="../../06_deployment/06_deployment/" class="dropdown-item">Deployment</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../visual-decisions/visual-decisions/" class="dropdown-item">Visual Decisions</a>
+</li>
+                                    
+<li>
+    <a href="../../../pca-analysis/pca-analysis/" class="dropdown-item">Automated PCA</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="mailto:nik.thompson@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">A.Prof Nik Thompson</a>
+</li>
+                                    
+<li>
+    <a href="mailto:luke.butcher@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">Dr Luke Butcher</a>
+</li>
+                                    
+<li>
+    <a href="mailto:michael.borck@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">Dr Michael Borck</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../03_data-preparation/03_data-preparation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../05_evaluation/05_evaluation/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#modeling" class="nav-link">Modeling</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#compare-models" class="nav-link">Compare Models</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#print-best-model" class="nav-link">Print 'Best' model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-model" class="nav-link">Create Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="modeling">Modeling</h1>
+<p>Stage 4</p>
+<p>Churn prediction modeling techniques attempt to understand the precise customer
+behaviors and attributes which signal the risk and timing of customer churn.
+The accuracy of the technique used is obviously critical to the success of
+any proactive retention efforts.  The most common churn prediction models
+are based on statistical and data-mining methods, such as logistic
+regression and other binary modeling techniques.</p>
+<p>Out data has been prepared, we will withhold a random sample of 10% of the data.
+We will use this to evaluate the final model.</p>
+<p>We use the PyCaret library.  We must set the dataset via the setup() function.
+This requires that we provide the Pandas DataFrame and specify the name of
+the column that contains the target variable. The setup() function also allows
+you to configure simple data pipeline, such as scaling, power transforms,
+missing data handling, and PCA transforms.</p>
+<p>Next, we can compare standard machine learning models by calling the
+compare_models() function. By default, it will evaluate models using 10-fold
+cross-validation, sort results by classification accuracy, and return the
+single best model. These are good defaults, and we don’t need to change a thing.</p>
+<h2 id="compare-models">Compare Models</h2>
+<style  type="text/css" >
+    #T_1314f_ th {
+          text-align: left;
+    }#T_1314f_row0_col0,#T_1314f_row0_col3,#T_1314f_row0_col4,#T_1314f_row0_col5,#T_1314f_row0_col6,#T_1314f_row0_col7,#T_1314f_row1_col0,#T_1314f_row1_col1,#T_1314f_row1_col2,#T_1314f_row1_col3,#T_1314f_row1_col4,#T_1314f_row1_col5,#T_1314f_row2_col0,#T_1314f_row2_col1,#T_1314f_row2_col2,#T_1314f_row2_col3,#T_1314f_row2_col5,#T_1314f_row2_col6,#T_1314f_row2_col7,#T_1314f_row3_col0,#T_1314f_row3_col1,#T_1314f_row3_col2,#T_1314f_row3_col3,#T_1314f_row3_col4,#T_1314f_row3_col5,#T_1314f_row3_col6,#T_1314f_row3_col7,#T_1314f_row4_col0,#T_1314f_row4_col1,#T_1314f_row4_col2,#T_1314f_row4_col3,#T_1314f_row4_col4,#T_1314f_row4_col5,#T_1314f_row4_col6,#T_1314f_row4_col7,#T_1314f_row5_col0,#T_1314f_row5_col1,#T_1314f_row5_col2,#T_1314f_row5_col3,#T_1314f_row5_col4,#T_1314f_row5_col5,#T_1314f_row5_col6,#T_1314f_row5_col7,#T_1314f_row6_col0,#T_1314f_row6_col1,#T_1314f_row6_col2,#T_1314f_row6_col3,#T_1314f_row6_col4,#T_1314f_row6_col5,#T_1314f_row6_col6,#T_1314f_row6_col7,#T_1314f_row7_col0,#T_1314f_row7_col1,#T_1314f_row7_col2,#T_1314f_row7_col3,#T_1314f_row7_col4,#T_1314f_row7_col5,#T_1314f_row7_col6,#T_1314f_row7_col7,#T_1314f_row8_col0,#T_1314f_row8_col1,#T_1314f_row8_col2,#T_1314f_row8_col3,#T_1314f_row8_col4,#T_1314f_row8_col5,#T_1314f_row8_col6,#T_1314f_row8_col7,#T_1314f_row9_col0,#T_1314f_row9_col1,#T_1314f_row9_col2,#T_1314f_row9_col3,#T_1314f_row9_col4,#T_1314f_row9_col5,#T_1314f_row9_col6,#T_1314f_row9_col7,#T_1314f_row10_col0,#T_1314f_row10_col1,#T_1314f_row10_col2,#T_1314f_row10_col3,#T_1314f_row10_col4,#T_1314f_row10_col5,#T_1314f_row10_col6,#T_1314f_row10_col7,#T_1314f_row11_col0,#T_1314f_row11_col1,#T_1314f_row11_col2,#T_1314f_row11_col3,#T_1314f_row11_col4,#T_1314f_row11_col5,#T_1314f_row11_col6,#T_1314f_row11_col7,#T_1314f_row12_col0,#T_1314f_row12_col1,#T_1314f_row12_col2,#T_1314f_row12_col4,#T_1314f_row12_col6,#T_1314f_row12_col7,#T_1314f_row13_col0,#T_1314f_row13_col1,#T_1314f_row13_col2,#T_1314f_row13_col3,#T_1314f_row13_col4,#T_1314f_row13_col5,#T_1314f_row13_col6,#T_1314f_row13_col7{
+            text-align:  left;
+            text-align:  left;
+        }#T_1314f_row0_col1,#T_1314f_row0_col2,#T_1314f_row1_col6,#T_1314f_row1_col7,#T_1314f_row2_col4,#T_1314f_row12_col3,#T_1314f_row12_col5{
+            text-align:  left;
+            text-align:  left;
+            background-color:  yellow;
+        }#T_1314f_row0_col8,#T_1314f_row1_col8,#T_1314f_row2_col8,#T_1314f_row3_col8,#T_1314f_row4_col8,#T_1314f_row5_col8,#T_1314f_row6_col8,#T_1314f_row7_col8,#T_1314f_row8_col8,#T_1314f_row9_col8,#T_1314f_row11_col8,#T_1314f_row12_col8,#T_1314f_row13_col8{
+            text-align:  left;
+            text-align:  left;
+            background-color:  lightgrey;
+        }#T_1314f_row10_col8{
+            text-align:  left;
+            text-align:  left;
+            background-color:  yellow;
+            background-color:  lightgrey;
+        }</style>
+<table id="T_1314f_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Model</th>        <th class="col_heading level0 col1" >Accuracy</th>        <th class="col_heading level0 col2" >AUC</th>        <th class="col_heading level0 col3" >Recall</th>        <th class="col_heading level0 col4" >Prec.</th>        <th class="col_heading level0 col5" >F1</th>        <th class="col_heading level0 col6" >Kappa</th>        <th class="col_heading level0 col7" >MCC</th>        <th class="col_heading level0 col8" >TT (Sec)</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_1314f_level0_row0" class="row_heading level0 row0" >lr</th>
+                        <td id="T_1314f_row0_col0" class="data row0 col0" >Logistic Regression</td>
+                        <td id="T_1314f_row0_col1" class="data row0 col1" >0.7993</td>
+                        <td id="T_1314f_row0_col2" class="data row0 col2" >0.8409</td>
+                        <td id="T_1314f_row0_col3" class="data row0 col3" >0.5549</td>
+                        <td id="T_1314f_row0_col4" class="data row0 col4" >0.6650</td>
+                        <td id="T_1314f_row0_col5" class="data row0 col5" >0.6040</td>
+                        <td id="T_1314f_row0_col6" class="data row0 col6" >0.4713</td>
+                        <td id="T_1314f_row0_col7" class="data row0 col7" >0.4753</td>
+                        <td id="T_1314f_row0_col8" class="data row0 col8" >0.9210</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row1" class="row_heading level0 row1" >lda</th>
+                        <td id="T_1314f_row1_col0" class="data row1 col0" >Linear Discriminant Analysis</td>
+                        <td id="T_1314f_row1_col1" class="data row1 col1" >0.7988</td>
+                        <td id="T_1314f_row1_col2" class="data row1 col2" >0.8359</td>
+                        <td id="T_1314f_row1_col3" class="data row1 col3" >0.5661</td>
+                        <td id="T_1314f_row1_col4" class="data row1 col4" >0.6592</td>
+                        <td id="T_1314f_row1_col5" class="data row1 col5" >0.6082</td>
+                        <td id="T_1314f_row1_col6" class="data row1 col6" >0.4741</td>
+                        <td id="T_1314f_row1_col7" class="data row1 col7" >0.4771</td>
+                        <td id="T_1314f_row1_col8" class="data row1 col8" >0.0360</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row2" class="row_heading level0 row2" >ridge</th>
+                        <td id="T_1314f_row2_col0" class="data row2 col0" >Ridge Classifier</td>
+                        <td id="T_1314f_row2_col1" class="data row2 col1" >0.7955</td>
+                        <td id="T_1314f_row2_col2" class="data row2 col2" >0.0000</td>
+                        <td id="T_1314f_row2_col3" class="data row2 col3" >0.5163</td>
+                        <td id="T_1314f_row2_col4" class="data row2 col4" >0.6692</td>
+                        <td id="T_1314f_row2_col5" class="data row2 col5" >0.5821</td>
+                        <td id="T_1314f_row2_col6" class="data row2 col6" >0.4499</td>
+                        <td id="T_1314f_row2_col7" class="data row2 col7" >0.4570</td>
+                        <td id="T_1314f_row2_col8" class="data row2 col8" >0.0200</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row3" class="row_heading level0 row3" >gbc</th>
+                        <td id="T_1314f_row3_col0" class="data row3 col0" >Gradient Boosting Classifier</td>
+                        <td id="T_1314f_row3_col1" class="data row3 col1" >0.7905</td>
+                        <td id="T_1314f_row3_col2" class="data row3 col2" >0.8356</td>
+                        <td id="T_1314f_row3_col3" class="data row3 col3" >0.5198</td>
+                        <td id="T_1314f_row3_col4" class="data row3 col4" >0.6526</td>
+                        <td id="T_1314f_row3_col5" class="data row3 col5" >0.5780</td>
+                        <td id="T_1314f_row3_col6" class="data row3 col6" >0.4412</td>
+                        <td id="T_1314f_row3_col7" class="data row3 col7" >0.4466</td>
+                        <td id="T_1314f_row3_col8" class="data row3 col8" >2.2610</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row4" class="row_heading level0 row4" >lightgbm</th>
+                        <td id="T_1314f_row4_col0" class="data row4 col0" >Light Gradient Boosting Machine</td>
+                        <td id="T_1314f_row4_col1" class="data row4 col1" >0.7841</td>
+                        <td id="T_1314f_row4_col2" class="data row4 col2" >0.8213</td>
+                        <td id="T_1314f_row4_col3" class="data row4 col3" >0.5146</td>
+                        <td id="T_1314f_row4_col4" class="data row4 col4" >0.6363</td>
+                        <td id="T_1314f_row4_col5" class="data row4 col5" >0.5686</td>
+                        <td id="T_1314f_row4_col6" class="data row4 col6" >0.4268</td>
+                        <td id="T_1314f_row4_col7" class="data row4 col7" >0.4314</td>
+                        <td id="T_1314f_row4_col8" class="data row4 col8" >17.6720</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row5" class="row_heading level0 row5" >ada</th>
+                        <td id="T_1314f_row5_col0" class="data row5 col0" >Ada Boost Classifier</td>
+                        <td id="T_1314f_row5_col1" class="data row5 col1" >0.7815</td>
+                        <td id="T_1314f_row5_col2" class="data row5 col2" >0.8131</td>
+                        <td id="T_1314f_row5_col3" class="data row5 col3" >0.5180</td>
+                        <td id="T_1314f_row5_col4" class="data row5 col4" >0.6276</td>
+                        <td id="T_1314f_row5_col5" class="data row5 col5" >0.5670</td>
+                        <td id="T_1314f_row5_col6" class="data row5 col6" >0.4228</td>
+                        <td id="T_1314f_row5_col7" class="data row5 col7" >0.4266</td>
+                        <td id="T_1314f_row5_col8" class="data row5 col8" >0.6080</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row6" class="row_heading level0 row6" >rf</th>
+                        <td id="T_1314f_row6_col0" class="data row6 col0" >Random Forest Classifier</td>
+                        <td id="T_1314f_row6_col1" class="data row6 col1" >0.7796</td>
+                        <td id="T_1314f_row6_col2" class="data row6 col2" >0.8123</td>
+                        <td id="T_1314f_row6_col3" class="data row6 col3" >0.4623</td>
+                        <td id="T_1314f_row6_col4" class="data row6 col4" >0.6403</td>
+                        <td id="T_1314f_row6_col5" class="data row6 col5" >0.5364</td>
+                        <td id="T_1314f_row6_col6" class="data row6 col6" >0.3970</td>
+                        <td id="T_1314f_row6_col7" class="data row6 col7" >0.4063</td>
+                        <td id="T_1314f_row6_col8" class="data row6 col8" >0.6200</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row7" class="row_heading level0 row7" >svm</th>
+                        <td id="T_1314f_row7_col0" class="data row7 col0" >SVM - Linear Kernel</td>
+                        <td id="T_1314f_row7_col1" class="data row7 col1" >0.7782</td>
+                        <td id="T_1314f_row7_col2" class="data row7 col2" >0.0000</td>
+                        <td id="T_1314f_row7_col3" class="data row7 col3" >0.5679</td>
+                        <td id="T_1314f_row7_col4" class="data row7 col4" >0.6076</td>
+                        <td id="T_1314f_row7_col5" class="data row7 col5" >0.5812</td>
+                        <td id="T_1314f_row7_col6" class="data row7 col6" >0.4322</td>
+                        <td id="T_1314f_row7_col7" class="data row7 col7" >0.4361</td>
+                        <td id="T_1314f_row7_col8" class="data row7 col8" >0.0340</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row8" class="row_heading level0 row8" >xgboost</th>
+                        <td id="T_1314f_row8_col0" class="data row8 col0" >Extreme Gradient Boosting</td>
+                        <td id="T_1314f_row8_col1" class="data row8 col1" >0.7770</td>
+                        <td id="T_1314f_row8_col2" class="data row8 col2" >0.8045</td>
+                        <td id="T_1314f_row8_col3" class="data row8 col3" >0.4914</td>
+                        <td id="T_1314f_row8_col4" class="data row8 col4" >0.6231</td>
+                        <td id="T_1314f_row8_col5" class="data row8 col5" >0.5486</td>
+                        <td id="T_1314f_row8_col6" class="data row8 col6" >0.4035</td>
+                        <td id="T_1314f_row8_col7" class="data row8 col7" >0.4090</td>
+                        <td id="T_1314f_row8_col8" class="data row8 col8" >8.3540</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row9" class="row_heading level0 row9" >et</th>
+                        <td id="T_1314f_row9_col0" class="data row9 col0" >Extra Trees Classifier</td>
+                        <td id="T_1314f_row9_col1" class="data row9 col1" >0.7729</td>
+                        <td id="T_1314f_row9_col2" class="data row9 col2" >0.7858</td>
+                        <td id="T_1314f_row9_col3" class="data row9 col3" >0.4477</td>
+                        <td id="T_1314f_row9_col4" class="data row9 col4" >0.6250</td>
+                        <td id="T_1314f_row9_col5" class="data row9 col5" >0.5210</td>
+                        <td id="T_1314f_row9_col6" class="data row9 col6" >0.3778</td>
+                        <td id="T_1314f_row9_col7" class="data row9 col7" >0.3871</td>
+                        <td id="T_1314f_row9_col8" class="data row9 col8" >0.3010</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row10" class="row_heading level0 row10" >nb</th>
+                        <td id="T_1314f_row10_col0" class="data row10 col0" >Naive Bayes</td>
+                        <td id="T_1314f_row10_col1" class="data row10 col1" >0.7661</td>
+                        <td id="T_1314f_row10_col2" class="data row10 col2" >0.7751</td>
+                        <td id="T_1314f_row10_col3" class="data row10 col3" >0.6235</td>
+                        <td id="T_1314f_row10_col4" class="data row10 col4" >0.5720</td>
+                        <td id="T_1314f_row10_col5" class="data row10 col5" >0.5961</td>
+                        <td id="T_1314f_row10_col6" class="data row10 col6" >0.4320</td>
+                        <td id="T_1314f_row10_col7" class="data row10 col7" >0.4332</td>
+                        <td id="T_1314f_row10_col8" class="data row10 col8" >0.0110</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row11" class="row_heading level0 row11" >knn</th>
+                        <td id="T_1314f_row11_col0" class="data row11 col0" >K Neighbors Classifier</td>
+                        <td id="T_1314f_row11_col1" class="data row11 col1" >0.7625</td>
+                        <td id="T_1314f_row11_col2" class="data row11 col2" >0.7733</td>
+                        <td id="T_1314f_row11_col3" class="data row11 col3" >0.5198</td>
+                        <td id="T_1314f_row11_col4" class="data row11 col4" >0.5789</td>
+                        <td id="T_1314f_row11_col5" class="data row11 col5" >0.5472</td>
+                        <td id="T_1314f_row11_col6" class="data row11 col6" >0.3870</td>
+                        <td id="T_1314f_row11_col7" class="data row11 col7" >0.3884</td>
+                        <td id="T_1314f_row11_col8" class="data row11 col8" >0.1030</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row12" class="row_heading level0 row12" >qda</th>
+                        <td id="T_1314f_row12_col0" class="data row12 col0" >Quadratic Discriminant Analysis</td>
+                        <td id="T_1314f_row12_col1" class="data row12 col1" >0.7492</td>
+                        <td id="T_1314f_row12_col2" class="data row12 col2" >0.8147</td>
+                        <td id="T_1314f_row12_col3" class="data row12 col3" >0.7213</td>
+                        <td id="T_1314f_row12_col4" class="data row12 col4" >0.5354</td>
+                        <td id="T_1314f_row12_col5" class="data row12 col5" >0.6142</td>
+                        <td id="T_1314f_row12_col6" class="data row12 col6" >0.4346</td>
+                        <td id="T_1314f_row12_col7" class="data row12 col7" >0.4455</td>
+                        <td id="T_1314f_row12_col8" class="data row12 col8" >0.0180</td>
+            </tr>
+            <tr>
+                        <th id="T_1314f_level0_row13" class="row_heading level0 row13" >dt</th>
+                        <td id="T_1314f_row13_col0" class="data row13 col0" >Decision Tree Classifier</td>
+                        <td id="T_1314f_row13_col1" class="data row13 col1" >0.7345</td>
+                        <td id="T_1314f_row13_col2" class="data row13 col2" >0.6807</td>
+                        <td id="T_1314f_row13_col3" class="data row13 col3" >0.5326</td>
+                        <td id="T_1314f_row13_col4" class="data row13 col4" >0.5200</td>
+                        <td id="T_1314f_row13_col5" class="data row13 col5" >0.5259</td>
+                        <td id="T_1314f_row13_col6" class="data row13 col6" >0.3417</td>
+                        <td id="T_1314f_row13_col7" class="data row13 col7" >0.3419</td>
+                        <td id="T_1314f_row13_col8" class="data row13 col8" >0.1380</td>
+            </tr>
+    </tbody></table>
+
+<h2 id="print-best-model">Print 'Best' model</h2>
+<pre><code class="language-python">print(best)
+</code></pre>
+<pre><code>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=42, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+</code></pre>
+<h2 id="create-model">Create Model</h2>
+<style  type="text/css" >
+#T_2c6c0_row10_col0,#T_2c6c0_row10_col1,#T_2c6c0_row10_col2,#T_2c6c0_row10_col3,#T_2c6c0_row10_col4,#T_2c6c0_row10_col5,#T_2c6c0_row10_col6{
+            background:  yellow;
+        }</style>
+<table id="T_2c6c0_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Accuracy</th>        <th class="col_heading level0 col1" >AUC</th>        <th class="col_heading level0 col2" >Recall</th>        <th class="col_heading level0 col3" >Prec.</th>        <th class="col_heading level0 col4" >F1</th>        <th class="col_heading level0 col5" >Kappa</th>        <th class="col_heading level0 col6" >MCC</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_2c6c0_level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_2c6c0_row0_col0" class="data row0 col0" >0.7607</td>
+                        <td id="T_2c6c0_row0_col1" class="data row0 col1" >0.8181</td>
+                        <td id="T_2c6c0_row0_col2" class="data row0 col2" >0.4359</td>
+                        <td id="T_2c6c0_row0_col3" class="data row0 col3" >0.5930</td>
+                        <td id="T_2c6c0_row0_col4" class="data row0 col4" >0.5025</td>
+                        <td id="T_2c6c0_row0_col5" class="data row0 col5" >0.3497</td>
+                        <td id="T_2c6c0_row0_col6" class="data row0 col6" >0.3569</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_2c6c0_row1_col0" class="data row1 col0" >0.8057</td>
+                        <td id="T_2c6c0_row1_col1" class="data row1 col1" >0.8357</td>
+                        <td id="T_2c6c0_row1_col2" class="data row1 col2" >0.5470</td>
+                        <td id="T_2c6c0_row1_col3" class="data row1 col3" >0.6882</td>
+                        <td id="T_2c6c0_row1_col4" class="data row1 col4" >0.6095</td>
+                        <td id="T_2c6c0_row1_col5" class="data row1 col5" >0.4824</td>
+                        <td id="T_2c6c0_row1_col6" class="data row1 col6" >0.4881</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row2" class="row_heading level0 row2" >2</th>
+                        <td id="T_2c6c0_row2_col0" class="data row2 col0" >0.8128</td>
+                        <td id="T_2c6c0_row2_col1" class="data row2 col1" >0.8565</td>
+                        <td id="T_2c6c0_row2_col2" class="data row2 col2" >0.6239</td>
+                        <td id="T_2c6c0_row2_col3" class="data row2 col3" >0.6759</td>
+                        <td id="T_2c6c0_row2_col4" class="data row2 col4" >0.6489</td>
+                        <td id="T_2c6c0_row2_col5" class="data row2 col5" >0.5215</td>
+                        <td id="T_2c6c0_row2_col6" class="data row2 col6" >0.5223</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row3" class="row_heading level0 row3" >3</th>
+                        <td id="T_2c6c0_row3_col0" class="data row3 col0" >0.8175</td>
+                        <td id="T_2c6c0_row3_col1" class="data row3 col1" >0.8723</td>
+                        <td id="T_2c6c0_row3_col2" class="data row3 col2" >0.5556</td>
+                        <td id="T_2c6c0_row3_col3" class="data row3 col3" >0.7222</td>
+                        <td id="T_2c6c0_row3_col4" class="data row3 col4" >0.6280</td>
+                        <td id="T_2c6c0_row3_col5" class="data row3 col5" >0.5099</td>
+                        <td id="T_2c6c0_row3_col6" class="data row3 col6" >0.5176</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row4" class="row_heading level0 row4" >4</th>
+                        <td id="T_2c6c0_row4_col0" class="data row4 col0" >0.8009</td>
+                        <td id="T_2c6c0_row4_col1" class="data row4 col1" >0.8393</td>
+                        <td id="T_2c6c0_row4_col2" class="data row4 col2" >0.5897</td>
+                        <td id="T_2c6c0_row4_col3" class="data row4 col3" >0.6571</td>
+                        <td id="T_2c6c0_row4_col4" class="data row4 col4" >0.6216</td>
+                        <td id="T_2c6c0_row4_col5" class="data row4 col5" >0.4871</td>
+                        <td id="T_2c6c0_row4_col6" class="data row4 col6" >0.4884</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row5" class="row_heading level0 row5" >5</th>
+                        <td id="T_2c6c0_row5_col0" class="data row5 col0" >0.7981</td>
+                        <td id="T_2c6c0_row5_col1" class="data row5 col1" >0.8504</td>
+                        <td id="T_2c6c0_row5_col2" class="data row5 col2" >0.6121</td>
+                        <td id="T_2c6c0_row5_col3" class="data row5 col3" >0.6396</td>
+                        <td id="T_2c6c0_row5_col4" class="data row5 col4" >0.6256</td>
+                        <td id="T_2c6c0_row5_col5" class="data row5 col5" >0.4874</td>
+                        <td id="T_2c6c0_row5_col6" class="data row5 col6" >0.4877</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row6" class="row_heading level0 row6" >6</th>
+                        <td id="T_2c6c0_row6_col0" class="data row6 col0" >0.8029</td>
+                        <td id="T_2c6c0_row6_col1" class="data row6 col1" >0.8241</td>
+                        <td id="T_2c6c0_row6_col2" class="data row6 col2" >0.5690</td>
+                        <td id="T_2c6c0_row6_col3" class="data row6 col3" >0.6667</td>
+                        <td id="T_2c6c0_row6_col4" class="data row6 col4" >0.6140</td>
+                        <td id="T_2c6c0_row6_col5" class="data row6 col5" >0.4827</td>
+                        <td id="T_2c6c0_row6_col6" class="data row6 col6" >0.4854</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row7" class="row_heading level0 row7" >7</th>
+                        <td id="T_2c6c0_row7_col0" class="data row7 col0" >0.7957</td>
+                        <td id="T_2c6c0_row7_col1" class="data row7 col1" >0.8301</td>
+                        <td id="T_2c6c0_row7_col2" class="data row7 col2" >0.5345</td>
+                        <td id="T_2c6c0_row7_col3" class="data row7 col3" >0.6596</td>
+                        <td id="T_2c6c0_row7_col4" class="data row7 col4" >0.5905</td>
+                        <td id="T_2c6c0_row7_col5" class="data row7 col5" >0.4564</td>
+                        <td id="T_2c6c0_row7_col6" class="data row7 col6" >0.4609</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row8" class="row_heading level0 row8" >8</th>
+                        <td id="T_2c6c0_row8_col0" class="data row8 col0" >0.8266</td>
+                        <td id="T_2c6c0_row8_col1" class="data row8 col1" >0.8501</td>
+                        <td id="T_2c6c0_row8_col2" class="data row8 col2" >0.5690</td>
+                        <td id="T_2c6c0_row8_col3" class="data row8 col3" >0.7416</td>
+                        <td id="T_2c6c0_row8_col4" class="data row8 col4" >0.6439</td>
+                        <td id="T_2c6c0_row8_col5" class="data row8 col5" >0.5319</td>
+                        <td id="T_2c6c0_row8_col6" class="data row8 col6" >0.5401</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row9" class="row_heading level0 row9" >9</th>
+                        <td id="T_2c6c0_row9_col0" class="data row9 col0" >0.7720</td>
+                        <td id="T_2c6c0_row9_col1" class="data row9 col1" >0.8328</td>
+                        <td id="T_2c6c0_row9_col2" class="data row9 col2" >0.5128</td>
+                        <td id="T_2c6c0_row9_col3" class="data row9 col3" >0.6061</td>
+                        <td id="T_2c6c0_row9_col4" class="data row9 col4" >0.5556</td>
+                        <td id="T_2c6c0_row9_col5" class="data row9 col5" >0.4036</td>
+                        <td id="T_2c6c0_row9_col6" class="data row9 col6" >0.4062</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row10" class="row_heading level0 row10" >Mean</th>
+                        <td id="T_2c6c0_row10_col0" class="data row10 col0" >0.7993</td>
+                        <td id="T_2c6c0_row10_col1" class="data row10 col1" >0.8409</td>
+                        <td id="T_2c6c0_row10_col2" class="data row10 col2" >0.5549</td>
+                        <td id="T_2c6c0_row10_col3" class="data row10 col3" >0.6650</td>
+                        <td id="T_2c6c0_row10_col4" class="data row10 col4" >0.6040</td>
+                        <td id="T_2c6c0_row10_col5" class="data row10 col5" >0.4713</td>
+                        <td id="T_2c6c0_row10_col6" class="data row10 col6" >0.4753</td>
+            </tr>
+            <tr>
+                        <th id="T_2c6c0_level0_row11" class="row_heading level0 row11" >SD</th>
+                        <td id="T_2c6c0_row11_col0" class="data row11 col0" >0.0189</td>
+                        <td id="T_2c6c0_row11_col1" class="data row11 col1" >0.0156</td>
+                        <td id="T_2c6c0_row11_col2" class="data row11 col2" >0.0510</td>
+                        <td id="T_2c6c0_row11_col3" class="data row11 col3" >0.0438</td>
+                        <td id="T_2c6c0_row11_col4" class="data row11 col4" >0.0423</td>
+                        <td id="T_2c6c0_row11_col5" class="data row11 col5" >0.0529</td>
+                        <td id="T_2c6c0_row11_col6" class="data row11 col6" >0.0527</td>
+            </tr>
+    </tbody></table>
+
+<pre><code class="language-python">lr_final = finalize_model(lr_model)
+</code></pre>
+<pre><code class="language-python">save_model(lr_final,'lr_20210701')
+</code></pre>
+<pre><code>Finished loading model, total used 100 iterations
+Transformation Pipeline and Model Succesfully Saved
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

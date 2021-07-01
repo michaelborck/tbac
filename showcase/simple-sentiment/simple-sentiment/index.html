@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="TBAC Team">
+        <link rel="canonical" href="https://businessanalyticscentre.website/showcase/simple-sentiment/simple-sentiment/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Sentiment Analysis using Textblob (NLP for beginners) - </title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../.."></a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../roadmap/" class="nav-link">Roadmap</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Team <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../team/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/nik-thompson-d7141bdd/" class="dropdown-item">Associate Professor Nik Thompson</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/luke-butcher-dc35ec50/" class="dropdown-item">Dr Luke Butcher</a>
+</li>
+                                    
+<li>
+    <a href="https://staffportal.curtin.edu.au/staff/profile/view/Michael.Borck/" class="dropdown-item">Dr Michael Borck</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Showcase <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../discussion-board/discussion-board/" class="dropdown-item">Blackboard Discussion</a>
+</li>
+                                    
+<li>
+    <a href="../../brand-analytics/brand-analytics/" class="dropdown-item">Brand Analytics</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Customer Churn</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../customer-churn/00_crisp-dm/00_crisp-dm/" class="dropdown-item">CRISP-DM Overview</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/01_business-understanding/01_business-understanding/" class="dropdown-item">Business Understanding</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/02_data-understanding/02_data-understanding/" class="dropdown-item">Data Understanding</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/03_data-preparation/03_data-preparation/" class="dropdown-item">Data Preparation</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/04_modeling/04_modeling/" class="dropdown-item">Modeling</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/05_evaluation/05_evaluation/" class="dropdown-item">Evaluation</a>
+</li>
+            
+<li>
+    <a href="../../customer-churn/06_deployment/06_deployment/" class="dropdown-item">Deployment</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../visual-decisions/visual-decisions/" class="dropdown-item">Visual Decisions</a>
+</li>
+                                    
+<li>
+    <a href="../../pca-analysis/pca-analysis/" class="dropdown-item">Automated PCA</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="mailto:nik.thompson@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">A.Prof Nik Thompson</a>
+</li>
+                                    
+<li>
+    <a href="mailto:luke.butcher@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">Dr Luke Butcher</a>
+</li>
+                                    
+<li>
+    <a href="mailto:michael.borck@curtin.edu.au?subject=Discuss%20Business%20Analytics" class="dropdown-item">Dr Michael Borck</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#sentiment-analysis-using-textblob-nlp-for-beginners" class="nav-link">Sentiment Analysis using Textblob (NLP for beginners)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#workflow" class="nav-link">Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-load-clean-data" class="nav-link">1. Load &amp; Clean data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-install-textblob-optional" class="nav-link">2. Install TextBlob (Optional)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-perform-sentiment-analysis" class="nav-link">3. Perform Sentiment Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="sentiment-analysis-using-textblob-nlp-for-beginners">Sentiment Analysis using Textblob (NLP for beginners)</h1>
+<p>Text Analytics</p>
+<p>Text analytics provides a powerful way to derive meaning from textual data.
+It can be used for a number of different things such as sentiment analysis,
+topic detection, and predictive analysis. The most common way that text
+analytics is used is to extract information about the topic and sentiment of
+any given piece of text. This allows companies to examine how their customers
+feel about their company or products. Text analytics has been around for a
+number of years now, however it has exploded in popularity thanks to recent
+advancements in machine learning algorithms and the availability of
+affordable cloud computing.</p>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li>Load &amp; Clean data</li>
+<li>Install TextBlob (Optional)</li>
+<li>Perform sentiment analysis</li>
+</ol>
+<h2 id="1-load-clean-data">1. Load &amp; Clean data</h2>
+<pre><code class="language-python">import pandas as pd
+import re
+
+# Could use text cleaner (lighweigtht) or nltk and remove stopwords etc..
+def clean_text(text):
+    # Comment out any line for textual elements you want to keep
+    text = re.sub('&lt;[^&lt;]+?&gt;', '', text)  # strip html
+    text = re.sub('\\xa0','', text)      # remove some rogue code from posts
+    text = re.sub(r'[^\w\s]','',text)    # remove puncuation
+    text = re.sub(r'\d+', '', text)      # remove numbers
+    text = &quot; &quot;.join(text.split())        # remove extra whitespace
+    text = text.lower()                  # to lowercase
+    return text
+
+# Load the data
+df = pd.read_csv('posts.csv')
+print(&quot;Before Cleaning&quot;)
+display(df.head())
+
+# Clean the data
+df.post = df.post.apply(clean_text)
+print(&quot;After Cleaning&quot;)
+df.head()
+</code></pre>
+<pre><code>Before Cleaning
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&lt;p&gt;Are there any key differences in the procur...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&lt;p&gt;The concept of procurement is considerably ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&lt;p&gt;What are the roles and responsibilities of ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&lt;p&gt;The Chief Procurement Officer is head of th...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&lt;p&gt;How does governance play part in the ICT pr...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code>After Cleaning
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>are there any key differences in the procureme...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>the concept of procurement is considerably sim...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>what are the roles and responsibilities of a c...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>the chief procurement officer is head of the p...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>how does governance play part in the ict procu...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="2-install-textblob-optional">2. Install TextBlob (Optional)</h2>
+<p>If not installed, uncomment preferred method below.  See https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/ for why using sys method</p>
+<pre><code class="language-python"># Install a conda package in the current Jupyter kernel
+#import sys
+#!conda install --yes --prefix {sys.prefix} textblob
+</code></pre>
+<pre><code class="language-python"># Install a pip package in the current Jupyter kernel
+#import sys
+#!{sys.executable} -m pip install textblob
+</code></pre>
+<h2 id="3-perform-sentiment-analysis">3. Perform Sentiment Analysis</h2>
+<p>The sentiment function of textblob returns two properties, polarity, and subjectivity.</p>
+<h3 id="polarity">Polarity</h3>
+<p>Polarity is float which lies in the range of [-1,1] where 1 means positive statement and -1 means a negative statement.</p>
+<h3 id="subjectivity">Subjectivity</h3>
+<p>Subjective sentences generally refer to personal opinion, emotion or judgment whereas objective refers to factual information. Subjectivity is also a float which lies in the range of [0,1].</p>
+<pre><code class="language-python">from textblob import TextBlob
+
+# Wrapper so can use Pandas apply() function on a column
+def getSubjectivity(text):
+    return TextBlob(text).sentiment.subjectivity
+
+def getPolarity(text):
+    return TextBlob(text).sentiment.polarity
+
+# Could use lambda function and not need wrappers above, but I think the wrapper
+# method is more readable and matches the applicaiton of the clean_text() function above
+# df['subjectivity'] = df.post.apply(lambda x: TextBlob(x).sentiment.subjectivity)
+
+# Calculate sentiment,
+df['subjectivity'] = df.post.apply(getSubjectivity)
+df['polarity'] = df.post.apply(getPolarity)
+
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>post</th>
+      <th>subjectivity</th>
+      <th>polarity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>are there any key differences in the procureme...</td>
+      <td>0.800000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>the concept of procurement is considerably sim...</td>
+      <td>0.358333</td>
+      <td>0.163542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>what are the roles and responsibilities of a c...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>the chief procurement officer is head of the p...</td>
+      <td>0.587963</td>
+      <td>0.377778</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>how does governance play part in the ict procu...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.boxplot(column=['subjectivity','polarity'], grid=False, figsize=(12,8))
+</code></pre>
+<pre><code>&lt;AxesSubplot:&gt;
+</code></pre>
+<p><img alt="png" src="../output_7_1.png" /></p>
+<pre><code class="language-python">
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
