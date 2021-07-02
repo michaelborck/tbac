@@ -40,6 +40,10 @@ nav:
         - Dr Luke Butcher: "mailto:luke.butcher@curtin.edu.au?subject=Discuss%20Business%20Analytics"
         - Dr Michael Borck: "mailto:michael.borck@curtin.edu.au?subject=Discuss%20Business%20Analytics"
 
+extra:
+  analytics:
+    provider: google
+    property: G-XY97PKGBWT
 
 extra_css:
     - css/extra.css
