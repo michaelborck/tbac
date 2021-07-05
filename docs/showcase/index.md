@@ -24,7 +24,7 @@ their preferences are, and what they might be interested in hearing more
 about. It can also show you who your competitors are and how well they are
 doing compared to you.
 
-## [Customer Churn](customer-churn/00_crisp-dm.md)
+## [Customer Churn](customer-churn/00_crisp-dm/00_crisp-dm.md)
 
 Tracking churn rate is a useful tool that businesses can use to improve their
 customer retention. A high turnover rate (churn rate) can be detrimental for
